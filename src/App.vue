@@ -4,7 +4,6 @@
       <app-header></app-header>
     </el-header>
     <el-main><router-view/></el-main>
-    <el-footer>Pie de página</el-footer>
   </el-container>
 </template>
 
@@ -21,5 +20,7 @@ export default {
 </script>
 
 <style>
-
+  body{
+    font-family: 'Roboto', sans-serif;
+  }
 </style>

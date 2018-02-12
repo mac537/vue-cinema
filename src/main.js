@@ -9,10 +9,23 @@ import {
   Main,
   Footer,
   Checkbox,
-  CheckboxGroup
+  CheckboxGroup,
+  Card
 } from 'element-ui'
 import App from './App'
 import router from './router'
+import store from './store/store.js'
+
+import moment from 'moment-timezone'
+moment.tz.setDefault("CET");
+//Object.defineProperty(Vue.prototype, '$moment', { get(){ return this.$root.moment } })
+Object.defineProperty(Vue.prototype, '$moment', { value: moment });
+
+
+
+//import axios from 'axios'
+
+//axios.defaults.baseURL = 'http://www.omdbapi.com/?apikey=bbe40115'
 
 Vue.use(Row)
 Vue.use(Col)
@@ -22,6 +35,7 @@ Vue.use(Main)
 Vue.use(Footer)
 Vue.use(Checkbox)
 Vue.use(CheckboxGroup)
+Vue.use(Card)
 
 Vue.config.productionTip = false
 
@@ -29,6 +43,8 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
+  moment,
   components: { App },
   template: '<App/>'
 })
